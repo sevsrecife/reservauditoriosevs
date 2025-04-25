@@ -18,14 +18,14 @@
         <h3 class="lead text-center mb-3">Consulte as datas e eventos marcados no auditório.</h3>
 
         <div class="ratio ratio-16x9 mb-4">
-            <iframe src="https://calendar.google.com/calendar/embed?height=1080&wkst=1&  ctz=America%2FRecife&showPrint=0&showTz=0&showCalendars=0&showTitle=0&src=YWdlbmRhbWVudG9zZXZzLnJlY2lmZUBnbWFpbC5jb20&src=Y2UzNmE5MzIzODlhMzRmNTk2YmUyMGM3NDU5ODY1ZTk5MWUwY2E1YzUzMzQ5N2FkODUwYTFkNTI2MDNlYmQ5ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cHQtYnIuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23F6BF26&color=%230B8043" style="border-width:0" width="1920" height="1080" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://calendar.google.com/calendar/embed?height=1080&wkst=1&  ctz=America%2FRecife&showPrint=0&showTz=0&showCalendars=0&showTitle=0&src=YWdlbmRhbWVudG9zZXZzLnJlY2lmZUBnbWFpbC5jb20&src=Y2UzNmE5MzIzODlhMzRmNTk2YmUyMGM3NDU5ODY1ZTk5MWUwY2E1YzUzMzQ5N2FkODUwYTFkNTI2MDNlYmQ5fEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cHQtYnIuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23F6BF26&color=%230B8043" style="border-width:0" width="1920" height="1080" frameborder="0" scrolling="no"></iframe>
         </div>
 
         <p class="lead mb-3 text-center">Para uma melhor visualização do calendário em smartphones <a href="https://calendar.google.com/calendar/embed?src=ce36a932389a34f596be20c7459865e991e0ca5c533497ad850a1d52603ebd9f%40group.calendar.google.com&ctz=America%2FRecife" target="_blank">clique aqui</a></p>
         
         <div class="text-center py-3">
             <p>
-                <a class="btn btn-secondary btn-lg" href="https://forms.gle/KK51tUfceH3xL1uY6" role="button" target="_blank">Reserve o auditório</a>
+                <a id="botaoReservar" class="btn btn-secondary btn-lg" href="https://forms.gle/KK51tUfceH3xL1uY6" role="button">Reserve o auditório</a>
             </p>
 
             <p>
@@ -39,6 +39,18 @@
             Desenvolvido por: Núcleo de transformação digital SEVS RECIFE
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const botaoReservar = document.getElementById('botaoReservar');
+
+            botaoReservar.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o link de navegar imediatamente
+                alert('Atenção: Sua reserva não será realizada caso exista outro evento agendado no mesmo dia e hora, confira no calendário acima se está disponível antes fazer sua reserva!');
+                window.location.href = 'https://forms.gle/KK51tUfceH3xL1uY6'; // Redireciona após o alerta
+            });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
 
